@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="x-icon" href="img/home.png" />
+  <title>Xuất đơn</title>
+  <style>
+    .back_don_hang {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .back_don_hang div {
+
+      margin: 10px;
+    }
+
+    h4 {
+      padding: 5px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #save_to_image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      text-decoration: none;
+    }
+
+    .invoice-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      font-size: 16px;
+
+      font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+      color: #555;
+
+    }
+
+    .invoice-container table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-container table td {
+      padding: 5px;
+      vertical-align: top;
+    }
+
+    .invoice-container table tr td:nth-child(2) {
+      text-align: right;
+    }
+
+    .invoice-container table tr.top table td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-container table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-container table tr.information table td {
+      padding-bottom: 40px;
+    }
+
+    .invoice-container table tr.heading td {
+      background: #eee;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .invoice-container table tr.details td {
+      padding-bottom: 10px;
+    }
+
+    .invoice-container table tr.item td {
+      border-bottom: 1px solid #eee;
+    }
+
+    .invoice-container table tr.item.last td {
+      border-bottom: none;
+    }
+
+    .invoice-container table tr.total td:nth-child(2) {
+      border-top: 2px solid #eee;
+      font-weight: bold;
+    }
+
+    .buttons-container {
+      width: 100%;
+      max-width: 800px;
+      height: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .buttons-container button {
+      margin: 5px;
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #fff;
+      transition: all 0.5s ease-in;
+    }
+
+    #save {
+      background-color: green;
+    }
+
+    #print {
+      background-color: blue;
+    }
+
+    #print:hover,
+    #save:hover {
+      background-color: #333;
+    }
+
+    /* css for print */
+    @media print {
+      .invoice-container {
+        max-width: unset;
+        box-shadow: none;
+        border: 0px;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    @media only screen and(max-width: 600px) {
+      .invoice-container table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+
+      .invoice-container table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
+
+    /* RTL */
+    .invoice-container.rtl {
+      direction: rtl;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .invoice-container.rtl table {
+      text-align: right;
+    }
+
+    .invoice-container.rtl table tr td:nth-child(2) {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <a id="save_to_image">
+    <div class="invoice-container">
+      <div class="table">
+        <table>
+          <tr class="top">
+            <td colspan="2">
+              <table>
+                <tr>
+                  <td class="title">
+                    <img src="/img/logoPrint.png" style="width: 100%; max-width: 100px" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="information">
+            <td>
+              <table class="Title_inof">
+                <tr>
+                  <td>
+                    <h4 class="name"></h4>
+                    <h4 class="email"></h4>
+                    <h4 class="address"></h4>
+                    <h4 class="phone"></h4>
+                    <h4 class="date_oder"></h4>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <table class="container_unit_price">
+            <!--  -->
+          </table>
+          <table>
+            <tr class="heading">
+              <td>Tổng</td>
+              <td>Số Tiền</td>
+            </tr>
+            <tr class="item">
+              <td></td>
+              <td id="result_price" style="color: #ff0000;"></td>
+            </tr>
+          </table>
+          <td>Shop Sẽ Liện Hệ Với Bạn Trong Vòng 15 Phút Sau Khi Đặt Hàng !</td>
+        </table>
+        <div class="buttons-container">
+          <button id="print">Xuất Đơn</button>
+        </div>
+      </div>
+
+  </a>
+</body>
+<script>
+  const Api = "http://localhost:3000/donHang"
+  function getCoursesDonHang(callback) {
+    fetch(Api)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(callback);
+  }
+
+  getCoursesDonHang(courses => {
+
+    var price = 0
+    courses.map((item, index) => {
+      if (item.id == localStorage.getItem('save')) {
+        document.querySelector('.Title_inof .name').textContent = `+ Họ Tên : ${item.name}`
+        document.querySelector('.Title_inof .email').textContent = `+ Email : ${item.email}`
+        document.querySelector('.Title_inof .address').textContent = `+ Địa chỉ : ${item.address}`
+        document.querySelector('.Title_inof .phone').textContent = `+ Số điện thoại : ${item.phone}`
+        document.querySelector('.Title_inof .date_oder').textContent = `+ Thời gian đặt hàng : ${item.arrRevers[0].time}`
+        const html = (item.arrRevers).map(item => {
+          price += parseInt(item.resultPrice.replace(/,/g, ''), 10)
+          return `
+       <tr class="heading">
+       <td>Sản Phầm Số ${index + 1}</td>
+       <td></td>
+     </tr>
+     <tr class="details">
+       <td>Tên Sản Phầm</td>
+       <td>${item.name}</td>
+     </tr>
+     <tr class="details">
+       <td>Loại Bộ Nhớ</td>
+       <td>${item.type}</td>
+     </tr>
+     <tr class="details">
+       <td>Loại Màu</td>
+       <td>${item.color}</td>
+     </tr>
+     <tr class="details">
+       <td>Số Lượng</td>
+       <td>${item.qual}</td>
+     </tr>
+     <tr class="details">
+       <td>Giá</td>
+       <td>${item.price} x ${item.qual}</td>
+     </tr>
+       `
+        })
+        document.querySelector('.container_unit_price').innerHTML = html.join('')
+        console.log(price)
+        document.querySelector('#result_price').textContent = `${price.toLocaleString("en-US")} đ`
+
+
+      }
+
+    })
+  })
+  document.querySelector("#print").addEventListener("click", function () {
+    window.print();
+  })
+</script>
+
+</html>

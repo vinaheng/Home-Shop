@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/styleCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/styleFormLogin.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Đăng ký</title>
+    <link rel="shortcut icon" type="x-icon" href="img/home.png" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="grid wide" style="width: 40vw;">
+            <!-- header navbar -->
+            <div class=" header__navbar" style="margin: 0 10px;">
+                <!-- navbar left -->
+                <ul style="list-style-type: none;" class="header__navbar-bar--list">
+                    <li class="header__navbar-bar--item-left">
+                        <span class="header__navbar-bar--txt">
+                            <a href="" class="header__navbar-bar--link">Bán Hàng 24/24 Giờ Dịch Vụ Tốt Top 01 Tại Việt
+                                Nam</a>
+                        </span>
+                    </li>
+
+                </ul>
+                <!-- navbar right -->
+                <ul class="header__navbar-bar--list">
+                    <li class="header__navbar-bar--item-right show__user-list ">
+
+                        <span class="header__navbar-bar--txt">
+                            <img class="header__navbar-bar--item-img--user" src="./img/user_Login.avif" alt="">
+                            <a href="#" class="header__navbar-bar--link header__navbar-bar--link-user">User</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="grid wide" style="justify-content: center; display: flex;">
+            <div class="row" style="width: 40vw;">
+                <div class="body__product container_controlor_cart">
+                    <div class="col l-12 m-12 c-12">
+
+                        <div class="row sm-gutter">
+
+                            <div class="col l-12 m-12 c-12 container_title_info contaner_ads">
+                                <a class="back_home" href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                                <div class="container_cart_title">
+                                    <h1>Đăng Ký</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col l-12">
+                                <img src="img/gif_1690963859.gif" alt="">
+                                <div class="input-field input-field-name">
+                                    <input id="name_user" type="text" required>
+                                    <label>Nhập họ và tên :</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="phone_user" type="text" required>
+                                    <label>Nhập số điện thoại :</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="email_user" type="email" required>
+                                    <label>Nhập Email :</label>
+                                </div>
+
+                                <p>(*) Hóa đơn VAT khi mua hàng sẽ được gửi qua email này</p>
+                                <div class="input-field">
+                                    <input id="address_user" type="text" required>
+                                    <label>Nhập địa chỉ :</label>
+                                </div>
+                                <div class="input-field input-field-pass">
+                                    <input id="pass_user" type="password" required>
+                                    <label>Nhập mật khẩu :</label>
+                                </div>
+                                <p>(*) Mật khẩu phải nhiều hơn 8 ký tự, ít nhất 1 chữ thường 1 chữ in hoa, 1 chữ số, 1
+                                    ký tự đặc biệt</p>
+                                <div class="input-field input-field-pass">
+                                    <input id="repass_user" type="password" required>
+                                    <label>Nhập mật khẩu lại :</label>
+                                </div>
+
+                                <div class="g-recaptcha" data-sitekey="6LdmzRAUAAAAACb2DIoucQ3EYuDQ-lciXpvWMhJV"></div>
+                                <a href="#" class="link-login">
+                                    <input class="btn btn_register" type="button" value="Đăng Ký">
+                                </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_chat">
+        <img src="img/icon-zalo-copy.png" alt="">
+    </div>
+    <div id="toast">
+
+    </div>
+    <script>
+        function handleCreate(data, callback) {
+            var option = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            };
+            fetch('http://localhost:3000/dataUser', option)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(callback);
+        }
+        $(document).ready(function () {
+            $(".link-login").click(function (e) {
+                // console.log(23)
+                var CaptchaResponse = grecaptcha.getResponse();
+
+                if (CaptchaResponse) {
+                    $('.input-field input').each(function () {
+                        if ($(this).val() === '') {
+                            $(this).closest('.input-field').css('border-color', 'red');
+                        } else {
+                            this.closest('.input-field').style.borderColor = 'green'; // Reset border color
+                        }
+                    });
+                    if ($("#name_user").val() == '') {
+                        toast({ title: "Error", message: "Xin vui long nhập Họ Tên !", type: "error", duration: 3000 })
+                    }
+                    else if ($("#phone_user").val() == '') {
+                        toast({ title: "Error", message: "Xin vui long nhập số điện thoại !", type: "error", duration: 3000 })
+                    }
+                    else if ($("#email_user").val() == '') {
+                        toast({ title: "Error", message: "Xin vui long nhập Email !", type: "error", duration: 3000 })
+                    }
+                    else if ($("#address_user").val() == '') {
+                        toast({ title: "Error", message: "Xin vui long nhập Địa Chỉ!", type: "error", duration: 3000 })
+                    } else if ($("#pass_user").val() == '') {
+                        toast({ title: "Error", message: "Xin vui long nhập Mật Khẩu !", type: "error", duration: 3000 })
+                    } else if ($("#pass_user").val() != $("#repass_user").val()) {
+                        $('.input-field-pass').css('border-color', 'red');
+                        toast({ title: "Error", message: "Mật Khâu Không hơp lệ!", type: "error", duration: 3000 })
+                    } else {
+                        const data = {
+                            name: $("#name_user").val(),
+                            numberPhone:$("#phone_user").val(),
+                            Email:  $("#email_user").val(),
+                            address: $("#address_user").val(),
+                            password:$("#pass_user").val(),
+                            rePassword: $("#pass_user").val(),
+                            logo: "",
+                        }
+                        handleCreate(data)
+                        document.querySelector('.link-login').href = './FormLogin.html'
+                    }
+                } else {
+                    toast({ title: "Warning", message: "Xin vui long bấm tôi không phải Robot !", type: "warning", duration: 3000 })
+                }
+
+
+            });
+
+        })
+        // Toast
+        function toast({ title = "", message = "", type = "", duration = 3000 }) {
+            const main = document.getElementById("toast");
+            if (main) {
+                const toast = document.createElement("div");
+                //auto remove toast
+                const autoRemoveID = setTimeout(function () {
+                    main.removeChild(toast);
+                }, duration);
+                //Remove toast when ckicked
+                toast.onclick = function (e) {
+                    if (e.target.closest(".toast-close")) {
+                        main.removeChild(toast);
+                        clearTimeout(autoRemoveID);
+                    }
+                };
+                const icons = {
+                    success: "fas fa-check-circle",
+                    info: "fas fa-info-circle",
+                    warning: "fas fa-exclamation-circle",
+                    error: "fas fa-exclamation-circle",
+                };
+                const icon = icons[type];
+                toast.classList.add("toast", `toast-${type}`);
+                toast.innerHTML = `
+	   <div class="toast-icon">
+		<i class="${icon}"></i>
+	  </div>
+	  <div class="toast-body">
+		 <h3 class="toast-title">${title}</h3>
+		 <p class="toast-msg">${message}</p>
+	  </div>
+	  <div class="toast-close"> <i class="fas fa-times"></i></div>
+		 `;
+                main.appendChild(toast);
+            }
+        }
+    </script>
+</body>

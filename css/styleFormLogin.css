@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 20px 0;
+    
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #969696;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #888686;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+    font-size: 1.2rem;
+    top: 10px;
+    transform: translateY(-120%);
+    color: rgb(20, 2, 140);
+}
+
+p {
+    margin-top: -12px;
+
+    font-size: 12px;
+}
+.input{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    
+}
+.input label{
+
+    font-size: 14px;
+    margin-left: 5px;
+}
+.btn{
+    margin: 20px 0;
+    width: 100%;
+    border: none;
+    background-color: rgb(23, 2, 125);
+    color: #fff;
+    font-weight: bold;
+
+    padding: 10px;
+    font-size: 16px;
+}
+.btn:active{
+    background-color: rgb(52, 4, 245);
+}
+@keyframes slideInleft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 23px));
+    }
+  
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+
+  .toast {
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    border-left: 5px solid #000;
+    animation: slideInleft ease 1s;
+    transition: all linear 0.5s;
+  }
+  
+  .toast-msg {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  
+  .toast-title {
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  .toast-body {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin: 10px;
+    flex: 1;
+  }
+  
+  .toast-icon {
+    font-size: 24px;
+    margin: 10px;
+  }
+  
+  .toast-success {
+    border-color: rgb(0, 255, 34);
+  }
+  
+  .toast-success .toast-icon {
+    color: rgb(0, 255, 34);
+  }
+  
+  .toast-info {
+    border-color: rgb(0, 26, 255);
+  }
+  
+  .toast-info .toast-icon {
+    color: rgb(0, 26, 255);
+  }
+  
+  .toast-warning {
+    border-color: rgb(255, 217, 0);
+  }
+  
+  .toast-warning .toast-icon {
+    color: rgb(255, 217, 0);
+  
+  }
+  
+  .toast-error {
+    border-color: rgb(255, 0, 0);
+  }
+  
+  .toast-error .toast-icon {
+    color: rgb(255, 0, 0);
+  }
+  
+  .toast-close {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .toast-close:hover {
+    color: #ff0000;
+  }
+  .toast-close:active {
+    color: #500202;
+  }
+  
+  .toast+.toast {
+    margin-top: 10px;
+  }
+  
+  #toast {
+    position: fixed;
+    z-index:1;
+      right: 20px;
+      top: 45px;
+  
+  }

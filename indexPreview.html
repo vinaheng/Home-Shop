@@ -1,0 +1,514 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/stylePreviewProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="shortcut icon" type="x-icon" href="img/home.png" />
+    <title>Chỉ tiết sản phẩm</title>
+</head>
+
+<body>
+    <!-- header -->
+
+    <div class="header">
+        <div class="grid wide">
+            <!-- header navbar -->
+            <div class="header__navbar hide-on-mobile-tablet">
+                <!-- navbar left -->
+                <ul class="header__navbar-bar--list">
+
+                    <li style="list-style: none;" class="header__navbar-bar--item-left">
+                        <span class="header__navbar-bar--txt">
+                            <a class="header__navbar-bar--link">Bán Hàng 24/24 Giờ Dịch Vụ Tốt Top 01 Tại Việt
+                                Nam</a>
+                        </span>
+                    </li>
+
+                </ul>
+                <!-- navbar right -->
+                <ul class="header__navbar-bar--list">
+                    <li style="list-style: none;" class="header__navbar-bar--item-left">
+                        <span class="header__navbar-bar--txt header__navbar-hover--qrcode expand">
+                            <a href="" class="header__navbar-bar--link ">Tải ứng dúng</a>
+                            <!-- header navbar application -->
+                            <div class="header__navbar-app--contain">
+                                <div class="header__navbar-bar--app">
+                                    <div class="row no-gutters">
+                                        <div class="col l-12">
+                                            <img c src="./img/rqcode.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="row sm-gutter">
+                                        <div class="col l-6">
+                                            <a href="#">
+                                                <img class="header__navbar-bar--app-img" src="./img/appstor.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col l-6">
+                                            <a href="#">
+                                                <img class="header__navbar-bar--app-img" src="./img/playstor.png"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col l-6">
+                                            <a href="#">
+                                                <img class="header__navbar-bar--app-img" src="./img/appgallery.png"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </span>
+                    </li>
+
+                    <li class="header__navbar-bar--item-right show__list-languages expand">
+                        <span class="header__navbar-bar--txt">
+                            <a href="" class="header__navbar-bar--link"><i
+                                    class="header__navbar-bar--link-icon bi bi-globe"></i>Tiếng việt</a>
+                        </span>
+                        <!-- language -->
+                        <ul style="list-style-type: none;" class="header__show-list--languages">
+                            <li class="header__show-languages--item header__show-list--languages-ative">
+                                <a href="#">English</a>
+                            </li>
+                            <li class="header__show-languages--item">
+                                <a href="#">Vietnam</a>
+                            </li>
+                            <li class="header__show-languages--item">
+                                <a href="#">Khmer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__navbar-bar--item-right hover_show_form_login ">
+                        <a href="#" class="header__navbar-bar--link">
+                            <span class="header__navbar-bar--txt" id="show_login">
+                                Đăng nhập Or Đăng Ký
+                            </span>
+
+                        </a>
+
+                    </li>
+                    <!--  -->
+                    <li class="header__navbar-bar--item-right show__user-list hide">
+                        <!-- User -->
+
+                    </li>
+                </ul>
+            </div>
+            <!-- Dang Key hoat dang nhap -->
+
+            <!-- header with search -->
+            <!-- search show input search -->
+            <div class="header__with-search">
+                <label for="show__form-input" class="header__search-on--mobile hide-on-tablet-pc">
+
+                </label>
+                <!-- Logo -->
+                <a href="index.html" class="header__with-search--logo">
+                    <div class="header__with-logo">
+                    
+                        <img src="./img/logo.png" alt="">
+                 
+                    </div>
+                    <!-- input tablet & PC -->
+                </a>
+                <div class="header__with-search--search hide-on-mobile">
+                    <div class="header__with-search--input">
+                        <input type="text" placeholder="Nhập để tìm kiếm hàng" class="header__with-search--input-text">
+                        <!-- history input -->
+                        <div class="history__input">
+                            <ul class="history__input-list">
+                                <h3>Lịch sử tìm kiếm</h3>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#" class="header__with-search--find">
+                        <i class="header__with-search--find-icon fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+                <div class="header__search-cart expand">
+                    <div class="container_cart">
+                        <i class="fa-solid fa-cart-shopping  header__search-cart--icon "></i>
+                        <div class="number_item">
+                            <span class="count_item_cart">1</span>
+                        </div>
+                    </div>
+                    <ul class="header__search-oder--list">
+                        <h3>Sản Phẩm Mới Thêm</h3>
+                        <div class="header__search-oder--container">
+                            <!-- gio Hang -->
+                        </div>
+                        <!-- Btn -->
+
+                        <a href="./indexCart.html" class="btn btn__primary btn__primary-cart open_cart">Xem Giỏ Hàng</a>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header input for mobile -->
+    <!-- input for mobile -->
+    <div class="grid wide">
+        <input class="label__input show__form-input" type="checkbox" id="show__form-input" onclick="isChecked()">
+        <div class="header__with-search--search  hide-on-tablet-pc header__with-search--search-mobile">
+            <input type="text" placeholder="Nhập để tìm kiếm hàng" class="header__with-search--input-text">
+            <!-- history input -->
+            <div class="history__input">
+                <ul class="history__input-list">
+                    <h3>Lịch sử tìm kiếm</h3>
+                    <div></div>
+                </ul>
+            </div>
+            <a href="#" class="header__with-search--find">
+                <i class="header__with-search--find-icon fa-solid fa-magnifying-glass"></i>
+            </a>
+        </div>
+    </div>
+    <!-- body -->
+    <div class="body">
+        <div class="grid wide">
+            <div class="body__product container_preview_product">
+                <div class="col l-12 m-12 c-12">
+                    <div class="row container_nav_pro-all">
+                        <div class="col l-12 m-12 c-12 container_nav_pro bar ">
+                            <div class="row sm-gutter">
+                                <a href="index.html" class="btn_back_home ">
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                                <div class="container_title_nav_pro">
+                                    <span style="font-size: 20px;" class="title"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-12 m-12 c-12 container_ads_gif">
+                            <img src="img/gif_1690963859.gif" alt="">
+                        </div>
+                        <div class="col l-7 m-12 c-12">
+                            <div class="bar_scoll">
+                                <div class="scoll_item">
+                                    <!--  -->
+                                </div>
+                                <div class="row contaienr_row_button">
+                                    <div class="buttons">
+                                        <div class=" btn_ads btn_pro_prev"><i
+                                                class="fa-solid icon_slider fa-angle-left"></i></div>
+                                        <div class=" btn_ads btn_pro_next"><i
+                                                class="fa-solid icon_slider fa-chevron-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="container_img_scoller">
+                                <div class="control_scroll">
+                                    <img src="img/ImgPhoneProduct/Iphone 14 pluse den.png" alt="">
+                                    <img src="img/ImgPhoneProduct/samsung s22 Ultra xanh.png" alt="">
+                                    <img src="img/ImgPhoneProduct/mi 12 pro xam.png" alt="">
+                                    
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="col l-5 m-12 c-12 container_nav_pro">
+                            <div class="container_fun_pro">
+                                <div class="row">
+                                    <div class="col l-12 m-12 c-12">
+                                        <h2>Chọn màu để xem giá và chi nhánh có hàng</h2>
+                                    </div>
+                                </div>
+                                <div class="row sm-gutter container_type_product items_type">
+                                    <!--  -->
+                                    <!--  -->
+                                </div>
+                                
+                                <div class="row sm-gutter container_type_product container_color_product">
+                                    <!--  -->
+                                </div>
+                                <div class="row sm-gutter container_type_product">
+                                    <div class="col l-12 m-12">
+                                        <h2>Giá đã chọn </h2>
+                                    </div>
+                                    <div class="col l-12 m-12">
+                                        <div style="border-bottom: 1px solid rgb(184, 185, 184);" class="contaienr_price_tiem">
+                                            <div class="contaienr_descount_item">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="contaienr_price_tiem">
+                                            <div class="price">
+                                                <span></span>
+                                            </div>
+                                            <div class="price-descount">
+                                                <span></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div   class="row sm-gutter container_btn_product">
+                                   
+                                    <!--  -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-12 m-12 c-12  container_ads_gif_buttom" >
+                            <div class="container_fun_pro" >
+                                <div class="col l-12 m-12 c-12 container_about_pro" >
+                                    <div>
+                                        
+                                        <div class="paragra_about_phone">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col l-12 m-12 c-12 ">
+                            <img src="img/1200-44-1200x44.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+
+
+        </div>
+
+    </div>
+    <a href="#">
+        <div class="to__top">
+          <i class="fa-solid fa-caret-up"></i>
+        </div>
+      </a>
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer__bar">
+            <!-- footer header top -->
+            <div class="footer__header-top">
+                <div class="grid wide">
+                    <div class="footer__header-top--border">
+                        <div class="row sm-gutter">
+                            <!--  -->
+                            <div class="col l-2-4 m-6 c-12">
+                                <div class="footer__header-top--container">
+                                    <div class="footer__header-top--heading">
+                                        <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                                    </div>
+                                    <ul class="footer__heading-top--list">
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Trung Tâm Trợ Giúp</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Home Shop Blog</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Home Shop Mall</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Home Shop Mall</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Hướng Dẫn Bán Hàng</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Thanh Toán</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Home Shop Xu</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Vận Chuyển</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Trả Hàng & Hoàn Tiền</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Chăm Sóc Khách Hàng</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Chính Sách Bảo Hành</li>
+                                        </a>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="col l-2-4 m-6 c-12">
+                                <div class="footer__header-top--container">
+                                    <div class="footer__header-top--heading">
+                                        <h3>VỀ HOME SHOP</h3>
+                                    </div>
+                                    <ul class="footer__heading-top--list">
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Giới Thiệu Về Home Shop Việt Nam</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Tuyển Dụng</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Điều Khoản Home Shop</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Chính Sách Bảo Mật</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Chính Hãng</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Kênh Người Bán</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Flash Sales</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Chương Trình Tiếp Thị Liên Kết Home
+                                                Shop
+                                            </li>
+                                        </a>
+                                        <a href="" class="">
+                                            <li class="footer__header-top--item">Liên Hệ Với Truyền Thông</li>
+                                        </a>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="col l-2-4 m-6 c-12">
+                                <div class="footer__header-top--container">
+                                    <div class="footer__header-top--heading">
+                                        <h3>VỀ HOME SHOP</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col l-12 m-12 c-12">
+                                            <img class="footer_header-top-img" src="./img/payment-methods-logos.png"
+                                                alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="col l-2-4 m-6 c-12">
+                                <div class="footer__header-top--container">
+                                    <div class="footer__header-top--heading">
+                                        <h3>THEO DÕI CHÚNG TÔI TRÊN</h3>
+                                    </div>
+                                    <ul class="footer__heading-top--list">
+                                        <a href="" class="">
+                                            <i class="footer__header-top--item-icon bi bi-facebook"></i>
+                                            <li class="footer__header-top--item">Facebook</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <i class="footer__header-top--item-icon bi bi-instagram"></i>
+                                            <li class="footer__header-top--item"> Instagram</li>
+                                        </a>
+                                        <a href="" class="">
+                                            <i class="footer__header-top--item-icon bi bi-linkedin"></i>
+                                            <li class="footer__header-top--item">LinkedIn</li>
+                                        </a>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="col l-2-4 m-6 c-12">
+                                <div class="footer__header-top--container">
+                                    <div class="footer__header-top--heading">
+                                        <h3>TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
+                                    </div>
+                                    <ul class="footer__heading-top--list">
+                                        <div class="row no-gutters">
+                                            <div class="col l-6 m-6 c-12">
+                                                <div class="footer__item-img"
+                                                    style="background-image:url(./img/rqcode.png) ;"></div>
+                                            </div>
+                                            <div class="col l-6 m-6 c-12">
+                                                <div class="row row__footer-on-mobile">
+                                                    <div class="col l-12">
+                                                        <a href="#">
+                                                            <img class="footer__item-img--link" src="./img/appstor.png"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col l-12">
+                                                        <a href="#">
+                                                            <img class="footer__item-img--link" src="./img/playstor.png"
+                                                                alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col l-12">
+                                                        <a href="#">
+                                                            <img class="footer__item-img--link"
+                                                                src="./img/appgallery.png" alt="">
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer__hearder-bottom">
+                <h3>© 2022 - Bản quyền thuộc về Công ty TNHH Home Shop</h3>
+            </div>
+        </div>
+    </div>
+    <!-- To Top -->
+    <a href="#">
+        <div class="to__top">
+            <i class="fa-solid fa-caret-up"></i>
+        </div>
+    </a>
+    <div class="container_chat">
+        <img src="img/icon-zalo-copy.png" alt="">
+    </div>
+    <div class="container_frame">
+        <div class="container_re_log">
+            <button class="close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="re_contaier_top">
+                <h2>Đăng Ký Or Đăng Nhập</h2>
+            </div>
+            <div class="title">
+                <h3>Vui lòng đăng nhập tài khoản để có trải nghiệm mua sắm tốt hơn</h3>
+            </div>
+            <div class="btn">
+                <a href="./FormLogin.html">Đăng Nhập</a>
+                <a href="./FormRegister.html">Đăng Ký</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Link javacript -->
+
+<script type="module" src="./js/slider.js"></script>
+<script src="./js/PreviewItem.js"></script>
+<script type="module" src="./js/InfoUser.js"></script>
+<script src="./js/main.js"></script>
+
+
+
+</html>
