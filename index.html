@@ -35,11 +35,11 @@
           </ul>
           <!-- navbar right -->
           <ul class="header__navbar-bar--list">
-            <li style="list-style: none" class="header__navbar-bar--item-left">
+            <li style="list-style: none" class="header__navbar-bar--item-left" >
               <span
                 class="header__navbar-bar--txt header__navbar-hover--qrcode expand"
               >
-                <a href="" class="header__navbar-bar--link">Tải ứng dúng</a>
+                <a href="" class="header__navbar-bar--link">Liên hệ shop: 0911512672</a>
                 <!-- header navbar application -->
                 <div class="header__navbar-app--contain">
                   <div class="header__navbar-bar--app">
@@ -81,17 +81,17 @@
                 </div>
               </span>
             </li>
-            <li
+            <!-- <li
               class="header__navbar-bar--item-right show__list-languages expand"
-            >
-              <span class="header__navbar-bar--txt">
+            > -->
+              <!-- <span class="header__navbar-bar--txt">
                 <a href="" class="header__navbar-bar--link"
                   ><i class="header__navbar-bar--link-icon bi bi-globe"></i
                   >Tiếng việt</a
                 >
-              </span>
+              </span> -->
               <!-- language -->
-              <ul class="header__show-list--languages">
+              <!-- <ul class="header__show-list--languages">
                 <li
                   class="header__show-languages--item header__show-list--languages-ative"
                 >
@@ -103,8 +103,8 @@
                 <li class="header__show-languages--item">
                   <a href="#">Khmer</a>
                 </li>
-              </ul>
-            </li>
+              </ul> -->
+            <!-- </li> -->
             <li class="header__navbar-bar--item-right hover_show_form_login">
               <a href="#" class="header__navbar-bar--link">
                 <span class="header__navbar-bar--txt" id="show_login">
@@ -662,7 +662,7 @@
     function reload() {
       getCoursesCart((courses) => {
         var htmlCart1 = courses.map((item) => {
-          if (localStorage.getItem("SaveLogin") == item.idCart) {
+          if (localStorage.getItem("SaveLogin") === item.idCart) {
             return `
                         <li class="header__search-oder--item">
                             <div class="header__search-oder--img">

@@ -36,9 +36,7 @@ if (value !== null) {
                             <li  class="header__navbar-bar--item-user">
                                 <a href="indexDonHang.html">Đơn mua</a>
                             </li>
-							<li class="header__navbar-bar--item-user">
-                                <a href="#">Yêu Tích</a>
-                            </li>
+				
                             <li class="header__navbar-bar--item-user btn_logout" class="btn_logout">
                                 <a  href="">Đăng xuất</a>
                             </li>
